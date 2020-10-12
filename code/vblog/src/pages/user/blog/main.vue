@@ -1,5 +1,8 @@
 <template>
-  <div>user/blog/main</div>
+  <div>
+    user/blog/main
+    <el-button>test</el-button>
+  </div>
 </template>
 
 <script>
