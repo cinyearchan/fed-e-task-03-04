@@ -1,16 +1,4 @@
 <template>
-  <!-- <div class="layout">
-    <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-      </nav>
-    </header>
-    <slot/>
-  </div> -->
   <div>
     <section class="page-header"></section>
     <div
@@ -24,25 +12,24 @@
     >
       <el-card shadow="never" :body-style="{ padding: '0px' }">
         <el-row>
-          <!-- <el-col :span="10">
-            <el-menu mode="horizontal" menu-trigger="click">
-              <el-submenu index="#more">
-                <template slot="title">了解博主</template>
-                <el-menu-item index="#githubHome">github主页</el-menu-item>
-                <el-menu-item index="#blog">其他博客</el-menu-item>
-              </el-submenu>
-              <el-submenu index="#webSites">
-                <template slot="title">其他网站</template>
 
-              </el-submenu>
-            </el-menu>
-          </el-col> -->
         </el-row>
       </el-card>
     </div>
     <section class="main-content">
       <el-row>
-        <el-col :span="6" style="padding-right: 10px"> </el-col>
+        <el-col :span="6" style="padding-right: 10px">
+          <div>
+            <el-card shadow="never">
+              <el-menu>
+                <el-menu-item v-for="item in routes" :key="item.path" :index="item.path">
+                  <i :class="item.meta.icon"></i>
+                  <span slot="title">{{ item.meta.title }}</span>
+                </el-menu-item>
+              </el-menu>
+            </el-card>
+          </div>
+        </el-col>
         <el-col :span="18" style="padding-left: 10px">
           <slot></slot>
         </el-col>
@@ -53,11 +40,11 @@
         <el-row>
           <el-col :span="10">
             <div>
-              © 2018 GitHub-Laziji&emsp;&emsp;
-              <a href="https://github.com/GitHub-Laziji" target="_blank"
+              © 2020&emsp;&emsp;
+              <a href="https://github.com/cinyearchan" target="_blank"
                 >Profile</a
               >&emsp;&emsp;
-              <a href="https://github.com/GitHub-Laziji/vblog" target="_blank"
+              <a href="https://github.com/cinyearchan/fed-e-task-03-04/tree/master/code/vblog" target="_blank"
                 >VBlog</a
               >
             </div>
@@ -90,6 +77,17 @@ query {
   }
 }
 </static-query>
+
+<script>
+import routes from "@/data/routes.json"
+export default {
+  data() {
+    return {
+      routes
+    }
+  }
+}
+</script>
 
 <style>
 .page-header {
