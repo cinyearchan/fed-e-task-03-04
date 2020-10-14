@@ -92,7 +92,12 @@
                     >
                       <i class="el-icon-star-off"></i>&emsp;
                       <a
-                        @click="$router.push(`/user/social/details/${item.name}`)"
+                        @click="$router.push({
+                          path: `/user/social/details/${item.name}`,
+                          params: {
+                            name: `${item.name}`
+                          }
+                        })"
                         style="text-decoration: none; cursor: pointer"
                         >{{ item.name }}</a
                       >

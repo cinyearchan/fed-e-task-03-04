@@ -9,7 +9,7 @@
             </el-col>
             <el-col :span="12">
               <div style="text-align:right;">
-                <el-button style="padding:3px 0;" type="text" icon="el-icon-share">分享</el-button>
+                <!-- <el-button style="padding:3px 0;" type="text" icon="el-icon-share">分享</el-button> -->
                 <el-button @click="goGithub(project.url)" style="padding:3px 0;" type="text" icon="el-icon-back">前往Github</el-button>
                 <el-button @click="more" style="padding:3px 0;" type="text" icon="el-icon-more-outline">更多项目</el-button>
               </div>
