@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout :activeMenu="activeMenu">
     <div style="min-height: 600px;" v-loading="loading">
       <el-card shadow="never" style="min-height: 400px;" v-if="blog.id">
         <div slot="header">
@@ -29,6 +29,7 @@ import GistApi from "@/api/gist"
 export default {
   data() {
     return {
+      activeMenu: '/user/new/main',
       query: {
         page: 1,
         pageSize: 1

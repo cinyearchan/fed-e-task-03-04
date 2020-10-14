@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout :activeMenu="activeMenu">
     <div style="min-height:600px;">
       <el-card shadow="never" style="margin-bottom:20px;">
         <el-form ref="form" :model="form" label-width="80px" :rules="ruleValidate">
@@ -29,6 +29,7 @@ import GistApi from '@/api/gist'
 export default {
   data() {
     return {
+      activeMenu: '/user/blog/main',
       form: {
         title: "",
         description: "",

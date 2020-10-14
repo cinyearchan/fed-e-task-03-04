@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout :activeMenu="activeMenu">
     <div style="min-height:600px;" v-loading="loading">
       <el-card shadow="never" style="margin-bottom:20px;">
         <el-input placeholder="请输入关键字" v-model="searchKey" clearable style="width:300px;"></el-input>
@@ -99,6 +99,7 @@ const parseHeaders = function(headers) {
 export default {
   data() {
     return {
+      activeMenu: '/user/project/main',
       query: {
         page: 1,
         pageSize: 5,

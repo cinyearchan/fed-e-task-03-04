@@ -1,13 +1,11 @@
 <template>
-  <Layout>
-    测试首页
-  </Layout>
+  <Layout></Layout>
 </template>
 
 <script>
 export default {
-  metaInfo: {
-    title: 'Hello, world!'
+  mounted() {
+    this.$router.push('/user/new/main')
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout :activeMenu="activeMenu">
     <div v-loading="loading">
       <el-card shadow="never" style="min-height:400px;margin-bottom:20px;">
         <div class="clearfix" slot="header">
@@ -47,6 +47,7 @@ import UserApi from "@/api/user"
 export default {
   data() {
     return {
+      activeMenu: '/user/social/main',
       loading: false,
       githubUsername: this.$route.params.name,
       name: null,

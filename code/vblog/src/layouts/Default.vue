@@ -21,8 +21,8 @@
         <el-col :span="6" style="padding-right: 10px">
           <div>
             <el-card shadow="never">
-              <el-menu>
-                <el-menu-item v-for="item in routes" :key="item.path" :index="item.path">
+              <el-menu @select="onSelect" :default-active="activeMenu">
+                <el-menu-item v-for="item in routes" :key="item.path" :index="item.redirect">
                   <i :class="item.meta.icon"></i>
                   <span slot="title">{{ item.meta.title }}</span>
                 </el-menu-item>
@@ -81,15 +81,27 @@ query {
 <script>
 import routes from "@/data/routes.json"
 export default {
+  props: ['activeMenu'],
   data() {
     return {
       routes
+    }
+  },
+  methods: {
+    onSelect(index, indexPath) {
+      // console.log('index', index)
+      // console.log('indexPath', indexPath)
+      this.$router.push(index)
     }
   }
 }
 </script>
 
 <style>
+body {
+  margin: 0;
+  padding: 0;
+}
 .page-header {
   padding: 5rem 6rem;
   color: #fff;

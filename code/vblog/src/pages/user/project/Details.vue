@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout :activeMenu="activeMenu">
     <div style="min-height:600px;" v-loading="loading">
       <el-card shadow="never" style="min-height:400px;">
         <div slot="header">
@@ -63,6 +63,7 @@ import ProjectApi from "@/api/project"
 export default {
   data() {
     return {
+      activeMenu: '/user/project/main',
       project: {
         name: ""
       },

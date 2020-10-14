@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout :activeMenu="activeMenu">
     <div>
       <el-card
         shadow="never"
@@ -178,6 +178,7 @@ const parseHeaders = function(headers) {
 export default {
   data() {
     return {
+      activeMenu: '/user/social/main',
       activeTab: 'followers',
       followers: {
         query: {
