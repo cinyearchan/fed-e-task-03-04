@@ -91,7 +91,8 @@ export default {
   },
   computed: {
     token() {
-      return store.getters.token
+      // return store.getters.token
+      return null
     }
   },
   mounted() {
